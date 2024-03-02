@@ -1,5 +1,5 @@
 import nltk
-# nltk.download('punkt')
+nltk.download('punkt')
 
 def nat_language_proc(choice, text):
     if choice == 1:
