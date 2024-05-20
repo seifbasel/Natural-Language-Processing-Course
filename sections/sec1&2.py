@@ -1,14 +1,35 @@
 import nltk
-from nltk.stem.porter import PorterStemmer as p_steam
-from nltk.stem.snowball import SnowballStemmer as s_steam
-nltk.download('punkt')
-# print(s_steam.languages)
-s_steam_eng=s_steam(language="english")
-sentence='seif is walking down the street and is enjoying the weather and the smell of air'
+from nltk.stem import SnowballStemmer
+from nltk.stem import PorterStemmer
+from nltk import ngrams
+# nltk.download('punkt')
 
-word1 = p_steam().stem(sentence)
-# word2 = s_steam_eng().stem(sentence)
 
-result = (5,"gererous")
-print(word1)
+text="seif basel mohamed aboutaleb went by bus to buy food from the shop , then decided to discover the next village across where he found..."
+
+tokens=nltk.word_tokenize(text)
+print(tokens)
+
+tokens2=text.split()
+print(tokens2)
+
+token_sentences=nltk.sent_tokenize(text)
+print(token_sentences)
+
+
+# Create an instance of PorterStemmer
+p_stem = PorterStemmer()
+
+# Stem the word "player"
+stemed = p_stem.stem("jungles")
+print(stemed)
+
+# Create an instance of PorterStemmer
+s_stem = SnowballStemmer(language="english")
+
+# Stem the word "player"
+stemed = s_stem.stem("jungles")
+print(stemed)
+
+
 
